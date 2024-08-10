@@ -2,6 +2,8 @@ import * as THREE from "three";
 import { Map, GoogleMap3DTileLayer, SingleImageElevationLayer, WMSLayer, OGC3DTilesLayer, PanController, RotateController, ZoomController, NOAAGFSCloudsLayer } from '@jdultra/ultra-globe';
 import earthElevationImage from './images/earth_elevation.jpg';
 import { FlyControls } from 'three-stdlib'
+import { VRButton } from "three-stdlib";
+
 
 
 let map = new Map({
@@ -163,6 +165,12 @@ for (let i = 0; i < 100; i++) {
     // y: -529792.501993797
     // z: 3851555.7250071447
     map.camera.position.set(5046801.062970094,-529792.501993797,3851555.7250071447);
+
+    // activate VR
+    document.body.appendChild( VRButton.createButton( map.renderer ) );
+    map.renderer.xr.enabled = true;
+
+
 
 
 
