@@ -153,6 +153,20 @@ for (let i = 0; i < 100; i++) {
         animate();
 
 
+    // Sepinaco code
+
+    //@ts-ignore
+    window.map = map;
+
+    // move camera to sevilla sity
+    // x: 5046801.062970094
+    // y: -529792.501993797
+    // z: 3851555.7250071447
+    map.camera.position.set(5046801.062970094,-529792.501993797,3851555.7250071447);
+
+
+
+
 /*
 
 // Sepinaco code
