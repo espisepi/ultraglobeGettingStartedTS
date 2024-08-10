@@ -127,5 +127,87 @@ for (let i = 0; i < 100; i++) {
     const scale = 1 + Math.random() * 0.01;
     line.scale.set(scale, scale, scale);
     map.scene.add(line);
-    console.log(map)
+    // console.log(map)
 }
+
+
+/*
+
+// Sepinaco code
+function emitirEvento(data: any) {
+    // Crear un nuevo evento personalizado con el nombre 'estadoCambiado'
+    const evento = new CustomEvent('estadoCambiado', {
+        detail: { estado: data } // Puedes pasar información adicional en el evento
+    });
+
+    // Emitir el evento en el objeto window (puede ser cualquier otro elemento)
+    window.dispatchEvent(evento);
+}
+
+// Función que se ejecutará periódicamente
+function chequearEstado() {
+    // Aquí podrías cambiar el valor de ma
+    // Ejemplo: ma = obtenerNuevoEstado();
+
+    // Emitir el evento con el estado actual de ma
+    emitirEvento(map);
+
+    // Puedes actualizar la variable ma si es necesario
+    // ma++;
+}
+
+// Configurar un intervalo para chequear el estado cada 2 segundos (2000 ms)
+setInterval(chequearEstado, 2000);
+
+// Escuchar el evento emitido
+// window.addEventListener('estadoCambiado', (e:any) => {
+//     console.log('El estado de map ha cambiado:', e.detail.estado);
+// });
+
+
+
+// Emitir eventos cada cierto tiempo del estado de la variable map
+
+
+/*
+
+// Variable cuyo estado queremos monitorear
+let ma = 0;
+
+// Función para emitir un evento
+function emitirEvento(ma) {
+    // Crear un nuevo evento personalizado con el nombre 'estadoCambiado'
+    const evento = new CustomEvent('estadoCambiado', {
+        detail: { estado: ma } // Puedes pasar información adicional en el evento
+    });
+
+    // Emitir el evento en el objeto window (puede ser cualquier otro elemento)
+    window.dispatchEvent(evento);
+}
+
+// Función que se ejecutará periódicamente
+function chequearEstado() {
+    // Aquí podrías cambiar el valor de ma
+    // Ejemplo: ma = obtenerNuevoEstado();
+
+    // Emitir el evento con el estado actual de ma
+    emitirEvento(ma);
+
+    // Puedes actualizar la variable ma si es necesario
+    // ma++;
+}
+
+// Configurar un intervalo para chequear el estado cada 2 segundos (2000 ms)
+setInterval(chequearEstado, 2000);
+
+// Escuchar el evento emitido
+window.addEventListener('estadoCambiado', (e) => {
+    console.log('El estado de ma ha cambiado:', e.detail.estado);
+});
+
+
+
+
+*/
+
+
