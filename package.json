@@ -23,7 +23,8 @@
     "author": "Emeric Beaufays",
     "license": "MIT",
     "dependencies": {
-        "@jdultra/ultra-globe": "^4.3.7"
+        "@jdultra/ultra-globe": "^4.3.7",
+        "three-stdlib": "file:../../librerias-sepinaco-threejs/three-stdlib/dist"
     },
     "devDependencies": {
         "@babel/core": "^7.21.4",

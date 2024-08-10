@@ -1,6 +1,8 @@
 import * as THREE from "three";
 import { Map, GoogleMap3DTileLayer, SingleImageElevationLayer, WMSLayer, OGC3DTilesLayer, PanController, RotateController, ZoomController, NOAAGFSCloudsLayer } from '@jdultra/ultra-globe';
 import earthElevationImage from './images/earth_elevation.jpg';
+import { FlyControls } from 'three-stdlib'
+
 
 let map = new Map({
     divID: 'screen',
@@ -21,9 +23,9 @@ let map = new Map({
 
 map.controller.clear(); // clear existing controller chain
 
-map.controller.append(new PanController(map.camera, map.domContainer, map));
-map.controller.append(new RotateController(map.camera, map.domContainer, map));
-map.controller.append(new ZoomController(map.camera, map.domContainer, map));
+// map.controller.append(new PanController(map.camera, map.domContainer, map));
+// map.controller.append(new RotateController(map.camera, map.domContainer, map));
+// map.controller.append(new ZoomController(map.camera, map.domContainer, map));
 
 
 
@@ -129,6 +131,26 @@ for (let i = 0; i < 100; i++) {
     map.scene.add(line);
     // console.log(map)
 }
+
+  	const controls = new FlyControls( map.camera, map.renderer.domElement );
+
+	controls.movementSpeed = 1000;
+	controls.domElement = map.renderer.domElement;
+	controls.rollSpeed = Math.PI / 24;
+	controls.autoForward = false;
+	controls.dragToLook = false;
+
+   // Función de animación
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Requerido si se usa damping en los controles
+            controls.update(0.01);
+
+            map.renderer.render(map.scene, map.camera);
+        }
+
+        animate();
 
 
 /*
