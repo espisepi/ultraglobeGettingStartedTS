@@ -81,16 +81,16 @@ map.setLayer(environmentLayer, 3);
 //map.ultraClock.setDate(new Date(2023, 5, 21, 15, 0, 0, 0));
 
 //uncomment to display Google Maps 3D Tiles. Don't forget to specify a valid Google Maps API key
-/* var googleMaps3DTiles = new GoogleMap3DTileLayer({
+var googleMaps3DTiles = new GoogleMap3DTileLayer({
     id: 3,
     name: "Google Maps 3D Tiles",
     visible: true,
-    apiKey: "your google maps api key",
+    apiKey: "AIzaSyC3s30ikTs9ZqcRDbD74FV3gTG0CoddUbE",
     loadOutsideView: true,
     displayCopyright: true,
 }); 
 map.setLayer(googleMaps3DTiles, 4);
-*/
+
 
 
 
@@ -127,4 +127,5 @@ for (let i = 0; i < 100; i++) {
     const scale = 1 + Math.random() * 0.01;
     line.scale.set(scale, scale, scale);
     map.scene.add(line);
+    console.log(map)
 }
