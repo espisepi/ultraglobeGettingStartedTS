@@ -1,8 +1,7 @@
 import * as THREE from "three";
 import { Map, GoogleMap3DTileLayer, SingleImageElevationLayer, WMSLayer, OGC3DTilesLayer, PanController, RotateController, ZoomController, NOAAGFSCloudsLayer } from '@jdultra/ultra-globe';
 import earthElevationImage from './images/earth_elevation.jpg';
-import { FlyControls } from 'three-stdlib'
-import { VRButton } from "three-stdlib";
+import { FlyControls, VRButton, GodModeCameraControls } from 'three-stdlib'
 
 
 
@@ -134,13 +133,13 @@ for (let i = 0; i < 100; i++) {
     // console.log(map)
 }
 
-  	const controls = new FlyControls( map.camera, map.renderer.domElement );
-
-	controls.movementSpeed = 1000;
-	controls.domElement = map.renderer.domElement;
-	controls.rollSpeed = Math.PI / 24;
-	controls.autoForward = false;
-	controls.dragToLook = false;
+    const controls = new GodModeCameraControls( map.camera, map.renderer.domElement );
+    // const controls = new FlyControls( map.camera, map.renderer.domElement );
+	// controls.movementSpeed = 1000;
+	// controls.domElement = map.renderer.domElement;
+	// controls.rollSpeed = Math.PI / 24;
+	// controls.autoForward = false;
+	// controls.dragToLook = false;
 
    // Función de animación
         function animate() {
